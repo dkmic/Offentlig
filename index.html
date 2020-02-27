@@ -1,42 +1,47 @@
 <!DOCTYPE html>
-
 <html>
-
-	<head>
-		<title>Dette er en Meta-overskrift </title>
-		<link rel = "stylesheet" type = "text/css" href = "7css.css">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		
-		<script type = "text/javascript" src = "cordova.js"></script>
-		<script type = "text/javascript" src = "7java.js"></script>
-		<meta name = "min side" content = "width = device-width, initial-scale=1">
-		<meta charset="UTF-8">
-		
-	</head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<link rel = "stylesheet" type = "text/css" href = "format.css">   <!-- Link to style sheet named format.css -->
+		<script type="text/javascript" src="cordova.js"></script> 
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>Bluifruit</title>
+    </head>
+     <body onload="onLoad()">
+		<!-- Content: div-tag with id = "content" -->
+		<div id = "content">
+			
+			<h1>Bluifruit øvelse</h1>
+			   
+			<ul id="bleDeviceList"> </ul>  
+			<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
+			<br>
+			<div id="statusDiv">Status: Disconnected</div>
+			<div id="bleId">DeviceId:</div>
+			<div id="debugDiv"></div>
+			<br><br>
+			<button id="ledOnButton" onclick = "data('1')">Set led ON</button>
+			<br><br>
+			<button id="ledOffButton" onclick = "data('0')">Set Led Off</button>
+			<br><br><br>
 
-	<body>
-	
-	<!-- .............................................................. -->
-	<!-- DETTE AFSNIT INDEHOLDER TO TESTFUNKTIONER TIL JAVA-FIL OG CSS -->
-	<!-- Alt i body bliver via css blåt -->
-	<br><br>
-			<h2>Hvis baggrunden er blå, er der kontakt til css-sheet.</h2>
-	
-	<!-- "div-id" bruges til at linke til css-sheet'et -->
-	<div id = "firsprocent">
-		<!-- Alt indenfor "div content" får autovidde på 80 % -->
-		<br>
-		<button id = "button1" onclick ="insertText()"> TEST-KNAP til java-fil </button>
-	</div><!-- Dette afslutter "div-firsprocent"-->
-	<br>
-	<div id = "femtiprocent">
-	<!-- id bruges til at linke til -JAVA-FIL -->
-		<div id="testTekst"></div>
-	</div><!-- Dette afslutter "div-femtiprocent"-->
-	
-	<!-- .............................................................. -->
-	
-	
-	<!-- .............................................................. -->
-	
-	</body>
+			<input type="hidden" id="GemtInput" >
+			<br>
+			
+
+			<br>
+			
+			<br>
+			<div id="sendDiv"></div>
+			<br><br>
+			<button id="disconnectButton"onClick="disconnect()">Disconnect</button>
+			<div id="receiveDiv"></div>
+		</div>
+    </body>
 </html>
+			
+
